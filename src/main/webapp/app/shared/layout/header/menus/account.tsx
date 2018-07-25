@@ -24,9 +24,10 @@ const accountMenuItems = (
     <DropdownItem id="login-item" tag={Link} to="/login">
       <FontAwesomeIcon icon="sign-in-alt" /> Sign in
     </DropdownItem>
-    <DropdownItem tag={Link} to="/register">
+    {/*<DropdownItem tag={Link} to="/register">
       <FontAwesomeIcon icon="sign-in-alt" /> Register
     </DropdownItem>
+    */}
   </>
 );
 
