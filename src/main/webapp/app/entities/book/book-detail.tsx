@@ -24,9 +24,9 @@ export class BookDetail extends React.Component<IBookDetailProps> {
     return (
       <Row>
         <Col md="8">
-          <h2>
+          <h4>
             Book [<b>{bookEntity.id}</b>]
-          </h2>
+          </h4>
           <dl className="jh-entity-details">
             <dt>
               <span id="name">Name</span>

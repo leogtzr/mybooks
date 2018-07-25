@@ -6,7 +6,7 @@
     <artifactId>mybooks</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>war</packaging>
-    <name>Mybooks</name>
+    <name>Leo's physical books</name>
 
     <repositories>
         <!-- jhipster-needle-maven-repository -->
