@@ -29,6 +29,7 @@
     ],
     "clientFramework": "react",
     "jhiPrefix": "jhi",
-    "herokuAppName": "mybooks"
+    "herokuAppName": null,
+    "herokuDeployType": "git"
   }
 }
