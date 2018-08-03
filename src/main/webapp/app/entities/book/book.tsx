@@ -24,7 +24,7 @@ export class Book extends React.Component<IBookProps> {
     return (
       <div>
         <h2 id="book-heading">
-          Books
+          My Books ...
           <Link to={`${match.url}/new`} className="btn btn-primary float-right jh-create-entity" id="jh-create-entity">
             <FontAwesomeIcon icon="plus" />&nbsp; Create new Book
           </Link>
@@ -45,7 +45,7 @@ export class Book extends React.Component<IBookProps> {
                 <tr key={`entity-${i}`}>
                   <td>
                     <Button tag={Link} to={`${match.url}/${book.id}`} color="link" size="sm">
-                      {book.id}
+                      Ver
                     </Button>
                   </td>
                   <td>{book.name}</td>
