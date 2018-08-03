@@ -23,9 +23,7 @@ export class Home extends React.Component<IHomeProp> {
         <Col md="9">
           <h2>Leo's physical books</h2>
           {account && account.login ? (
-            <div>
-              <Alert color="success">You are logged in as user {account.login}.</Alert>
-            </div>
+            <div />
           ) : (
             <div>
               <Alert color="info">
