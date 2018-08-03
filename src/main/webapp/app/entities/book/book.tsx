@@ -30,6 +30,7 @@ export class Book extends React.Component<IBookProps> {
           </Link>
         </h2>
         <div className="table-responsive">
+          <h2>bookList.size</h2>
           <Table responsive>
             <thead>
               <tr>
