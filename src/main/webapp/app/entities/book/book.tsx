@@ -52,7 +52,7 @@ export class Book extends React.Component<IBookProps> {
                   <td>{book.name}</td>
                   <td>{book.author}</td>
                   <td>{book.notes}</td>
-                  <td>{book.read ? 'Done :)' : ' '}</td>
+                  <td>{book.read ? '✅' : ' '}</td>
                   <td className="text-right">
                     <div className="btn-group flex-btn-group-container">
                       <Button tag={Link} to={`${match.url}/${book.id}`} color="info" size="sm">
