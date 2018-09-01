@@ -87,18 +87,6 @@ public class BookResource {
         log.debug("REST request to get all Books");
         return bookRepository.findAll();
     }
-    
-    /**
-     * GET  /books : get all the books.
-     *
-     * @return the ResponseEntity with status 200 (OK) and the list of books in body
-     */
-    @GetMapping("/all")
-    @Timed
-    public List<Book> allBooks() {
-        log.debug("REST request to get all Books (all endpoint ... )");
-        return bookRepository.findAll();
-    }
 
     /**
      * GET  /books/:id : get the "id" book.

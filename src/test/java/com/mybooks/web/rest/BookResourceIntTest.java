@@ -48,6 +48,9 @@ public class BookResourceIntTest {
     private static final String DEFAULT_NOTES = "AAAAAAAAAA";
     private static final String UPDATED_NOTES = "BBBBBBBBBB";
 
+    private static final Boolean DEFAULT_READ = false;
+    private static final Boolean UPDATED_READ = true;
+
     @Autowired
     private BookRepository bookRepository;
 
@@ -89,7 +92,8 @@ public class BookResourceIntTest {
         Book book = new Book()
             .name(DEFAULT_NAME)
             .author(DEFAULT_AUTHOR)
-            .notes(DEFAULT_NOTES);
+            .notes(DEFAULT_NOTES)
+            .read(DEFAULT_READ);
         return book;
     }
 
@@ -116,6 +120,7 @@ public class BookResourceIntTest {
         assertThat(testBook.getName()).isEqualTo(DEFAULT_NAME);
         assertThat(testBook.getAuthor()).isEqualTo(DEFAULT_AUTHOR);
         assertThat(testBook.getNotes()).isEqualTo(DEFAULT_NOTES);
+        assertThat(testBook.isRead()).isEqualTo(DEFAULT_READ);
     }
 
     @Test
@@ -150,7 +155,8 @@ public class BookResourceIntTest {
             .andExpect(jsonPath("$.[*].id").value(hasItem(book.getId().intValue())))
             .andExpect(jsonPath("$.[*].name").value(hasItem(DEFAULT_NAME.toString())))
             .andExpect(jsonPath("$.[*].author").value(hasItem(DEFAULT_AUTHOR.toString())))
-            .andExpect(jsonPath("$.[*].notes").value(hasItem(DEFAULT_NOTES.toString())));
+            .andExpect(jsonPath("$.[*].notes").value(hasItem(DEFAULT_NOTES.toString())))
+            .andExpect(jsonPath("$.[*].read").value(hasItem(DEFAULT_READ.booleanValue())));
     }
     
 
@@ -167,7 +173,8 @@ public class BookResourceIntTest {
             .andExpect(jsonPath("$.id").value(book.getId().intValue()))
             .andExpect(jsonPath("$.name").value(DEFAULT_NAME.toString()))
             .andExpect(jsonPath("$.author").value(DEFAULT_AUTHOR.toString()))
-            .andExpect(jsonPath("$.notes").value(DEFAULT_NOTES.toString()));
+            .andExpect(jsonPath("$.notes").value(DEFAULT_NOTES.toString()))
+            .andExpect(jsonPath("$.read").value(DEFAULT_READ.booleanValue()));
     }
     @Test
     @Transactional
@@ -192,7 +199,8 @@ public class BookResourceIntTest {
         updatedBook
             .name(UPDATED_NAME)
             .author(UPDATED_AUTHOR)
-            .notes(UPDATED_NOTES);
+            .notes(UPDATED_NOTES)
+            .read(UPDATED_READ);
 
         restBookMockMvc.perform(put("/api/books")
             .contentType(TestUtil.APPLICATION_JSON_UTF8)
@@ -206,6 +214,7 @@ public class BookResourceIntTest {
         assertThat(testBook.getName()).isEqualTo(UPDATED_NAME);
         assertThat(testBook.getAuthor()).isEqualTo(UPDATED_AUTHOR);
         assertThat(testBook.getNotes()).isEqualTo(UPDATED_NOTES);
+        assertThat(testBook.isRead()).isEqualTo(UPDATED_READ);
     }
 
     @Test

@@ -24,9 +24,9 @@ export class BookDetail extends React.Component<IBookDetailProps> {
     return (
       <Row>
         <Col md="8">
-          <h4>
+          <h2>
             Book [<b>{bookEntity.id}</b>]
-          </h4>
+          </h2>
           <dl className="jh-entity-details">
             <dt>
               <span id="name">Name</span>
@@ -40,6 +40,10 @@ export class BookDetail extends React.Component<IBookDetailProps> {
               <span id="notes">Notes</span>
             </dt>
             <dd>{bookEntity.notes}</dd>
+            <dt>
+              <span id="read">Read</span>
+            </dt>
+            <dd>{bookEntity.read ? 'true' : 'false'}</dd>
           </dl>
           <Button tag={Link} to="/entity/book" replace color="info">
             <FontAwesomeIcon icon="arrow-left" /> <span className="d-none d-md-inline">Back</span>

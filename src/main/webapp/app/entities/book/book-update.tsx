@@ -58,6 +58,7 @@ export class BookUpdate extends React.Component<IBookUpdateProps, IBookUpdateSta
   };
 
   render() {
+    const isInvalid = false;
     const { bookEntity, loading, updating } = this.props;
     const { isNew } = this.state;
 
@@ -98,12 +99,18 @@ export class BookUpdate extends React.Component<IBookUpdateProps, IBookUpdateSta
                   </Label>
                   <AvField id="book-notes" type="text" name="notes" />
                 </AvGroup>
+                <AvGroup>
+                  <Label id="readLabel" check>
+                    <AvInput id="book-read" type="checkbox" className="form-control" name="read" />
+                    Read
+                  </Label>
+                </AvGroup>
                 <Button tag={Link} id="cancel-save" to="/entity/book" replace color="info">
                   <FontAwesomeIcon icon="arrow-left" />&nbsp;
                   <span className="d-none d-md-inline">Back</span>
                 </Button>
                 &nbsp;
-                <Button color="primary" id="save-entity" type="submit" disabled={updating}>
+                <Button color="primary" id="save-entity" type="submit" disabled={isInvalid || updating}>
                   <FontAwesomeIcon icon="save" />&nbsp; Save
                 </Button>
               </AvForm>

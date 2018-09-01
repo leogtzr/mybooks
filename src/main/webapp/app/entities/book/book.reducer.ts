@@ -3,6 +3,7 @@ import { ICrudGetAction, ICrudGetAllAction, ICrudPutAction, ICrudDeleteAction } 
 
 import { cleanEntity } from 'app/shared/util/entity-utils';
 import { REQUEST, SUCCESS, FAILURE } from 'app/shared/reducers/action-type.util';
+import { SERVER_API_URL } from 'app/config/constants';
 
 import { IBook, defaultValue } from 'app/shared/model/book.model';
 
@@ -95,7 +96,7 @@ export default (state: BookState = initialState, action): BookState => {
   }
 };
 
-const apiUrl = 'api/books';
+const apiUrl = SERVER_API_URL + '/api/books';
 
 // Actions
 

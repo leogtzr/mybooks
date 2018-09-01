@@ -24,13 +24,12 @@ export class Book extends React.Component<IBookProps> {
     return (
       <div>
         <h2 id="book-heading">
-          My Books ...
+          Books
           <Link to={`${match.url}/new`} className="btn btn-primary float-right jh-create-entity" id="jh-create-entity">
             <FontAwesomeIcon icon="plus" />&nbsp; Create new Book
           </Link>
         </h2>
         <div className="table-responsive">
-          <h2>Current books: {Array.from(bookList.keys()).length}</h2>
           <Table responsive>
             <thead>
               <tr>
@@ -38,6 +37,7 @@ export class Book extends React.Component<IBookProps> {
                 <th>Name</th>
                 <th>Author</th>
                 <th>Notes</th>
+                <th>Read</th>
                 <th />
               </tr>
             </thead>
@@ -46,12 +46,13 @@ export class Book extends React.Component<IBookProps> {
                 <tr key={`entity-${i}`}>
                   <td>
                     <Button tag={Link} to={`${match.url}/${book.id}`} color="link" size="sm">
-                      Ver
+                      {book.id}
                     </Button>
                   </td>
                   <td>{book.name}</td>
                   <td>{book.author}</td>
                   <td>{book.notes}</td>
+                  <td>{book.read ? 'true' : 'false'}</td>
                   <td className="text-right">
                     <div className="btn-group flex-btn-group-container">
                       <Button tag={Link} to={`${match.url}/${book.id}`} color="info" size="sm">

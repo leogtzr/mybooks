@@ -29,6 +29,9 @@ public class Book implements Serializable {
     @Column(name = "notes")
     private String notes;
 
+    @Column(name = "jhi_read")
+    private Boolean read;
+
     // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove
     public Long getId() {
         return id;
@@ -76,6 +79,19 @@ public class Book implements Serializable {
     public void setNotes(String notes) {
         this.notes = notes;
     }
+
+    public Boolean isRead() {
+        return read;
+    }
+
+    public Book read(Boolean read) {
+        this.read = read;
+        return this;
+    }
+
+    public void setRead(Boolean read) {
+        this.read = read;
+    }
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here, do not remove
 
     @Override
@@ -105,6 +121,7 @@ public class Book implements Serializable {
             ", name='" + getName() + "'" +
             ", author='" + getAuthor() + "'" +
             ", notes='" + getNotes() + "'" +
+            ", read='" + isRead() + "'" +
             "}";
     }
 }

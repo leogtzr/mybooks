@@ -101,7 +101,7 @@ describe('Entities reducer tests', () => {
 
   describe('Successes', () => {
     it('should fetch all entities', () => {
-      const payload = { data: [{ 1: 'fake1' }, { 2: 'fake2' }] };
+      const payload = { data: { 1: 'fake1', 2: 'fake2' } };
       expect(
         reducer(undefined, {
           type: SUCCESS(ACTION_TYPES.FETCH_BOOK_LIST),
