@@ -116,4 +116,11 @@ public class BookResource {
         bookRepository.deleteById(id);
         return ResponseEntity.ok().headers(HeaderUtil.createEntityDeletionAlert(ENTITY_NAME, id.toString())).build();
     }
+
+    @GetMapping("/books/count")
+    @Timed
+    public Integer booksRead() {
+        return bookRepository.booksReadCount();
+    }
+
 }
